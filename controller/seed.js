@@ -5,7 +5,6 @@ const data = require('../db/data')
 router.get('/', async (req, res) => {
     await Song.find({}).deleteMany()
     await Song.insertMany(data).then(res.json({status: 200, data: data}))
-    
 })
 
 module.exports = router

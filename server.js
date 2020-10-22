@@ -8,6 +8,7 @@ const morgan = require('morgan')
 const app = express()
 
 const seedRouter = require('./controller/seed')
+const songsRouter = require('./controller/song')
 
 NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors())
 app.use(express.json())
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/seed', seedRouter)
+app.use('/songs', songsRouter)
 
 app.listen(PORT, () => {
     console.log('Listening on port:', PORT)

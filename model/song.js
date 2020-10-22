@@ -5,7 +5,8 @@ const songSchema = new Schema (
     {
         "title": String,
         "time": String,
-        "artist": String
+        "artist": String,
+        "isFavorite": Boolean
     }
 )
 

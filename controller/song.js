@@ -24,6 +24,11 @@ router.put('/favorites/:id', async (req, res) => {
     res.json(await Song.findByIdAndUpdate(req.params.id, {isFavorite: !song.isFavorite}, {new:true}))
 })
 
+//update song
+router.put('/:id', async (req, res) => {
+    res.json(await Song.findByIdAndUpdate(req.params.id, req.body, {new:true}))
+})
+
 //delete song
 router.delete('/:id', async (req, res) => {
     res.json(await Song.findByIdAndRemove(req.params.id))

@@ -10,7 +10,7 @@ const app = express()
 const seedRouter = require('./controller/seed')
 const songsRouter = require('./controller/song')
 
-NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors())
+app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 

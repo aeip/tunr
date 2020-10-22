@@ -21,7 +21,8 @@ router.get('/favorites', async (req, res) => {
 router.put('/favorites/:id', async (req, res) => {
     const song = await Song.findById(req.params.id)
     console.log(song.isFavorite)
-    res.json(await Song.findByIdAndUpdate(req.params.id, {isFavorite: !song.isFavorite}, {new:true}))
+    let boolean = !song.isFavorite
+    res.json(await Song.findByIdAndUpdate(req.params.id, {isFavorite: boolean}, {new:true}))
 })
 
 //update song

@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const {PORT} = process.env
 const cors = require('cors')
-const corsOptions = require('./config/cors')
 const {NODE_ENV= 'development'} = process.env
 const morgan = require('morgan')
 const app = express()
